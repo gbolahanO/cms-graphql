@@ -13,6 +13,14 @@ const Query = {
       }
     })
     return singlePost
+  },
+  getUser: async (_, { id }, ctx, info) => {
+    const user = await User.findOne({
+      where: {
+        id
+      }
+    })
+    return user
   }
 }
 

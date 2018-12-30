@@ -21,6 +21,7 @@ type User {
 type Query {
   getAllPost: [Post!]
   getPostById(id: Int): Post
+  getUser(id: Int): User
 }
 
 type Mutation {
