@@ -2,10 +2,10 @@ import { Sequelize } from 'sequelize'
 import sequelize from '../db/sequelize'
 
 const User = sequelize.define('user', {
-  firstName: {
+  firstname: {
     type: Sequelize.STRING
   },
-  lastName: {
+  lastname: {
     type: Sequelize.STRING
   },
   email: {

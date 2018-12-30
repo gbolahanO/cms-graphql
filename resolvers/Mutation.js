@@ -5,8 +5,9 @@ const Mutation = {
     let post = await Post.create(data);
     return post;
   },
-  createUser: (_, args, ctx, info) => {
-    console.log(args)
+  createUser: async (_, { data }, ctx, info) => {
+    let user = await User.create(data);
+    return user;
   }
 }
 
