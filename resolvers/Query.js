@@ -21,6 +21,14 @@ const Query = {
       }
     })
     return user
+  },
+  getUserById: async (_, { id }, ctx, info) => {
+    const singleUser = await User.findOne({
+      where: {
+        id
+      }
+    })
+    return singleUser
   }
 }
 
