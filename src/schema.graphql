@@ -27,6 +27,7 @@ type Query {
 
 type Mutation {
   createPost(data: createPostInput): Post
+  deletePostById(id: Int): Post
   createUser(data: createUserInput): User
 }
 

@@ -6,9 +6,25 @@ const Mutation = {
     let post = await Post.create(data);
     return post;
   },
+  deletePostById: async (_, { id }, ctx, info) => {
+    // find the pos before deleting it
+    let delPost = await Post.findOne({
+      where: {
+        id
+      }
+    })
+    // delete post
+    let destroyedPost = await Post.destroy({
+      where: {
+        id
+      }
+    })
+    // return deleted post
+    return delPost
+  },
   createUser: async (_, args, ctx, info) => {
     const { firstname, lastname, email, password } = args.data
-    
+
     const salt = bcrypt.genSaltSync(10)
     const hashedPassword = bcrypt.hashSync(password, salt)
 
